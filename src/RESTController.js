@@ -147,7 +147,7 @@ const RESTController = {
       headers = headers || {};
 
       const authToken = localStorage.getItem('2FA_Token');
-      headers[Two_Factor_Token] = authToken;
+      headers['Two_Factor_Token'] = authToken;
 
       if (typeof(headers['Content-Type']) !== 'string') {
         headers['Content-Type'] = 'text/plain'; // Avoid pre-flight
