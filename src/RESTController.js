@@ -146,9 +146,6 @@ const RESTController = {
 
       headers = headers || {};
 
-      const authToken = localStorage.getItem('2FA_Token');
-      headers['Two_Factor_Token'] = authToken;
-
       if (typeof(headers['Content-Type']) !== 'string') {
         headers['Content-Type'] = 'text/plain'; // Avoid pre-flight
       }
@@ -163,6 +160,9 @@ const RESTController = {
       for (const key in customHeaders) {
         headers[key] = customHeaders[key];
       }
+
+      const authToken = localStorage.getItem('2FA_Token');
+      headers['Two_Factor_Token'] = authToken;
 
       function handleProgress(type, event) {
         if (options && typeof options.progress === 'function') {
