@@ -164,7 +164,7 @@ const RESTController = {
       const authToken = localStorage.getItem('2FA_Token');
       console.log(headers);
 
-      headers['X-Two-Factor-Token'] = authToken;
+      headers['X-Two-Factor_Token'] = authToken;
 
       function handleProgress(type, event) {
         if (options && typeof options.progress === 'function') {
