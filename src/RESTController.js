@@ -162,7 +162,6 @@ const RESTController = {
       }
 
       const authToken = localStorage.getItem('2FA_Token');
-      console.log(headers);
 
       headers['X-Two-Factor-Token'] = authToken;
 
